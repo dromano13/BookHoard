@@ -26,7 +26,32 @@ const signup = (req, res) => {
     })    
 }
 
+const renderLoginPage = (req, res) => {
+    res.render(`users/login.ejs`);
+}
+
+const login = (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+    .then(foundUser => {
+        if(foundUser){
+            bcrypt.compare(req.body.password, foundUser.password, (err, match) => {
+                if (match) {
+                    res.redirect(`/users/profile/${foundUser.id}`);
+                } else {
+                  return res.sendStatus(400);
+                }
+            })
+        }
+    })
+}
+
 module.exports = {
     renderSignup,
-    signup
+    signup,
+    renderLoginPage,
+    login
 }
