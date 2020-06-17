@@ -11,10 +11,6 @@ const deleteUser = (req, res) => {
 
 const renderProfile = (req, res) => {
     User.findByPk(req.params.index, {
-        // include: [{
-        //     model: Fruit,
-        //     attributes: ['id', 'name']
-        // }]
     })
     .then(userProfile => {
         res.render('users/profile.ejs', {
