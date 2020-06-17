@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
 app.use('/auth', routes.auth);
-app.use(`/fruits`, routes.books);
+app.use(`/books`, routes.books);
 app.use(`/users`, routes.users);
 
 app.listen(process.env.PORT, () =>{
