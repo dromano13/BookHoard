@@ -11,6 +11,10 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
+app.get(`/`, (req, res) => {
+    res.render(`users/index.ejs`);
+})
+
 app.use('/auth', routes.auth);
 app.use(`/books`, routes.books);
 app.use(`/users`, routes.users);
