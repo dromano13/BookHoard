@@ -10,9 +10,10 @@ const renderSignup = (req, res) => {
 const signup = (req, res) => {
     bcrypt.genSalt(10, (err, salt) => {
         if (err) return res.status(500).json(err);
+
         bcrypt.hash(req.body.password, salt, (err, hashedPwd) => {
-        if(err) return res.status(500).json(err);
-        req.body.password = hashedPwd;
+            if(err) return res.status(500).json(err);
+            req.body.password = hashedPwd;
 
         User.create(req.body)
         .then(newUser => {
@@ -22,11 +23,11 @@ const signup = (req, res) => {
                 console.log(err);
                 res.send(`err ${err}`);
             }) 
-        })
-    })    
+        });
+    });    
 }
 
-const renderLoginPage = (req, res) => {
+const renderLogin = (req, res) => {
     res.render(`users/login.ejs`);
 }
 
@@ -52,6 +53,6 @@ const login = (req, res) => {
 module.exports = {
     renderSignup,
     signup,
-    renderLoginPage,
+    renderLogin,
     login
 }
