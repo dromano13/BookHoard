@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1>Edit Books Page</h1>
+        <form action='/books/<%=book.id%>?_method=PUT' method="POST">
+            Title: <input type="text" name="title" value="<%=book.title%>" />
+            Author: <input type="text" name="author" value="<%=book.author%>" />
+            Genre: <input type="text" name="genre" value="<%=book.genre%>" />
+            Img: <input type="text" name="img" value="<%=book.img%>" />
+            User Id: <input type="text" name="userId" value="<%=book.userId%>" />
+            <select name="season">
+                <% for (let i=0; i<formats.length; i++ ) { %>
+                    <option value="<%=formats[i].id%>"><%=formats[i].name%></option>
+                <% } %>
+            </select>
+            <input type="submit" value="Edit Books" />
+        </form>
+    </body>
+</html>

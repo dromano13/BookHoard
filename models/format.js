@@ -4,7 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Format.associate = function(models) {
-    // associations can be defined here
+    Format.belongsToMany(models.Book, {
+      through: 'BookFormat',
+      foreignKey: 'formatId',
+      otherKey: 'bookId'
+    });
   };
   return Format;
 };
