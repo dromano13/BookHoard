@@ -1,4 +1,8 @@
+const Book = require('../models').Book;
+
 const User = require('../models').User;
+
+const jwt = require('jsonwebtoken');
 
 const deleteUser = (req, res) => {
     User.destroy({
@@ -11,10 +15,15 @@ const deleteUser = (req, res) => {
 
 const renderProfile = (req, res) => {
     User.findByPk(req.params.index, {
+        include: [{
+            model: Book,
+            attributes: ['id', 'title']
+        }]
     })
     .then(userProfile => {
         res.render('users/profile.ejs', {
-            user:userProfile
+            user:userProfile,
+            token: req.query.token
         })
     })
 }
@@ -25,7 +34,7 @@ const editProfile = (req, res) => {
         returning: true
     })
     .then(updatedUser => {
-        res.redirect(`/users/profile/${req.params.index}`);
+        res.redirect(`/users/profile/${req.params.index}/?token=${req.query.token}`);
     })
 }
 

@@ -4,6 +4,8 @@ const User = require('../models').User;
 
 const bcrypt = require('bcryptjs');
 
+const jwt = require('jsonwebtoken');
+
 const renderSignup = (req, res) => {
     res.render('users/signup.ejs');
 }
@@ -18,7 +20,17 @@ const signup = (req, res) => {
             
             User.create(req.body)
             .then(newUser => {
-                res.redirect(`/users/profile/${newUser.id}`);
+                const token = jwt.sign(
+                    {
+                        username: newUser.username,
+                        id: newUser.id
+                    },
+                    process.env.JWT_SECRET,
+                    {
+                      expiresIn: "30 days"
+                    },
+                );
+                res.redirect(`/users/profile/${newUser.id}/?token=${token}`);
             })
             .catch(err => {
                 console.log(err);
@@ -42,7 +54,17 @@ const login = (req, res) => {
         if(foundUser) {
             bcrypt.compare(req.body.password, foundUser.password, (err, match) => {
                 if (match) {
-                    res.redirect(`/users/profile/${foundUser.id}`);
+                    const token = jwt.sign(
+                        {
+                            username: foundUser.username,
+                            id: foundUser.id
+                        },
+                        process.env.JWT_SECRET,
+                        {
+                          expiresIn: "30 days"
+                        },
+                    );
+                    res.redirect(`/users/profile/${foundUser.id}/?token=${token}`);
                 } else {
                   return res.sendStatus(400);
                 }

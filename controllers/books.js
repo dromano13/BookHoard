@@ -16,8 +16,7 @@ const index = (req, res) => {
 
 const show = (req, res) => {
     Book.findByPk(req.params.index, {
-        include : [
-            {
+        include : [{
             model: User,
             attributes: ['name']
             },
@@ -43,6 +42,10 @@ const renderNew = (req, res) => {
 }
 
 const postBook = (req, res) => {
+    console.log(req.body)
+    if(!req.body.img) {
+        delete req.body.img
+    }
     Book.create(req.body)
     .then(newBook => {
         res.redirect('/books')
@@ -98,4 +101,3 @@ module.exports = {
     renderEdit,
     editBook
 }
-
