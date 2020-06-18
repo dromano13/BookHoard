@@ -16,7 +16,7 @@ app.get(`/`, (req, res) => {
 })
 
 app.use('/auth', routes.auth);
-// app.use(`/books`, routes.books);
+app.use(`/books`, routes.books);
 app.use(`/users`, routes.users);
 
 app.listen(process.env.PORT, () =>{

@@ -7,7 +7,7 @@ module.exports = {
         title: "There and Back Again",
         author: "Bilbo Baggins",
         genre: "Fantasy in a Fantasy",
-        userID: 3,
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -15,7 +15,7 @@ module.exports = {
         title: "The Lord of the Rings",
         author: "JR Tolkein",
         genre: "Fantasy",
-        userID: 3,
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }

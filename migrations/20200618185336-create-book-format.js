@@ -1,26 +1,20 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Books', {
+    return queryInterface.createTable('BookFormats', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        allowNull: false,
-        type: Sequelize.STRING
+      bookId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
-      author: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      genre: {
-        type: Sequelize.STRING
-      },
-      userId: {
-        type: Sequelize.INTEGER
+      formatId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -32,9 +26,16 @@ module.exports = {
         defaultValue: new Date(),
         type: Sequelize.DATE
       }
-    });
+    },
+    {
+      uniqueKeys: {
+          actions_unique: {
+              fields: ['bookId', 'formatId']
+          }
+        }
+      });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Books');
+    return queryInterface.dropTable('BookFormats');
   }
 };
