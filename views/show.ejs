@@ -7,7 +7,11 @@
 
         <img src=<%=book.img%> />
 
-        This tome was added to the Hoard by <%=book.User.name%><br>
+        <% if (book.userId === true) { %>
+        This tome was added to the Hoard by <%=book.User.name%>
+        <% } else { %>
+            A Tome of Wonder
+        <% } %>
         
         <h3>It is available in the following formats:</h3>
         <select name="formats">
