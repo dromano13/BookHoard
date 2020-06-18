@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     genre: DataTypes.STRING,
+    img: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {});
   Book.associate = function(models) {
