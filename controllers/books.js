@@ -45,6 +45,9 @@ const renderNew = (req, res) => {
 };
 
 const postBook = (req, res) => {
+    if(!req.body.img) {
+        delete req.body.img
+    }
     Book.create(req.body)
     .then(newBook => {
         res.redirect('/books');
