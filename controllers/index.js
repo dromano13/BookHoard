@@ -1,4 +1,5 @@
 module.exports = {
-    users: require('./users'),
-    auth: require(`./auth`)
+    auth: require(`./auth`),
+    users: require(`./users`),
+    books: require(`./books`)
 }
