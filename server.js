@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', verifyToken, routes.users);
 app.use('/auth', routes.auth);
-app.use('/books', routes.books);
+app.use('/books', verifyToken, routes.books);
 
 app.listen(process.env.PORT, () => {
     console.log('I am listening');

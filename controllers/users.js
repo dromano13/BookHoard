@@ -22,7 +22,7 @@ const renderProfile = (req, res) => {
     })
     .then(userProfile => {
         res.render('users/profile.ejs', {
-            user:userProfile,
+            user: userProfile,
             token: req.query.token
         })
     })

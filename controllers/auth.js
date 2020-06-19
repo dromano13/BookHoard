@@ -73,9 +73,10 @@ const login = (req, res) => {
     })
 }
 
+
 module.exports = {
     renderSignup,
     signup,
     renderLogin,
-    login
+    login,
 }
