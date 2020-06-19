@@ -48,6 +48,7 @@ const renderNew = (req, res) => {
 }
 
 const postBook = (req, res) => {
+    req.body.userId=req.user.id;
     if(!req.body.img) {
         delete req.body.img
     }

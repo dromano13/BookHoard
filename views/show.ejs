@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/show.css" />
+    </head>
     <body>
         <nav>
             <a href="/" class="f90-logout-button">Logout</a>
@@ -8,7 +11,7 @@
         <h1><%=book.title%></h1>
         <img src=<%=book.img%> />
         This tome was added to the Hoard by <%=book.User.name%><br>
-        <h3>It is available in the following formats:</h3>
+        <h3>Please Select Your Reading Format:</h3>
         <select name="formatId">
             <% for ( let i = 0; i<formats.length; i++ ) {
                 let selected = (i == 0) ? "selected" : "";
