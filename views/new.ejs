@@ -3,17 +3,40 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/new.css" />
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <h1>New Book Page</h1>
-        <form action="/books" method="POST">
+        <nav>
+            <h1>The Blissful Bibliophiles Book Hoard</h1>
+            <a href="/" class="f90-logout-button">Logout</a>
+        </nav>
+        <h2>New Book Page</h2>
+        <form action="/books/?token=<%=token%>" method="POST">
             Title: <input type="text" name="title" />
             Author: <input type="text" name="author" />
             Genre: <input type="text" name="genre" />
             Img: <input type="text" name="img" />
-            User Id: <input type="text" name="userId" />
             <input type="submit" value="Create Book" />
         </form>
+        <footer>
+            <div class="contact">
+                <p>
+                    <a href="#">Contact Us</a>
+                </p>
+            </div>
+            <div class="social">
+                <p>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </p>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2020. All Rights Reserved</p>
+            </div>
+        
+        </footer>
     </body>
 </html>

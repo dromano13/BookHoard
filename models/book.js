@@ -4,19 +4,16 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     genre: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
     img: DataTypes.STRING,
+    userId: DataTypes.INTEGER
   }, {});
   Book.associate = function(models) {
-    Book.belongsTo(models.User, {
-      foreignKey: `userId`
-    }),
+    Book.belongsTo(models.User, {foreignKey: 'userId'})
     Book.belongsToMany(models.Format, {
       through: 'BookFormat',
       foreignKey: 'bookId',
       otherKey: 'formatId'
     });
-    // associations can be defined here
   };
   return Book;
 };
