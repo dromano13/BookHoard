@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 
 const User = require('../models').User;
@@ -8,6 +9,7 @@ const jwt = require('jsonwebtoken');
 
 const renderSignup = (req, res) => {
     res.render('users/signup.ejs');
+
 }
 
 const signup = (req, res) => {
@@ -31,6 +33,7 @@ const signup = (req, res) => {
                     },
                 );
                 res.redirect(`/users/profile/${newUser.id}/?token=${token}`);
+
             })
             .catch(err => {
                 console.log(err);
@@ -42,6 +45,7 @@ const signup = (req, res) => {
 
 const renderLogin = (req, res) => {
     res.render('users/login.ejs')
+
 }
 
 const login = (req, res) => {
@@ -65,6 +69,7 @@ const login = (req, res) => {
                         },
                     );
                     res.redirect(`/users/profile/${foundUser.id}/?token=${token}`);
+
                 } else {
                   return res.sendStatus(400);
                 }
@@ -73,11 +78,11 @@ const login = (req, res) => {
     })
 }
 
+
 const logout = (req, res) => {
     req.logout();
     res.redirect('/');
   };
-
 
 module.exports = {
     renderSignup,
@@ -85,4 +90,5 @@ module.exports = {
     renderLogin,
     login,
     logout
+
 }
