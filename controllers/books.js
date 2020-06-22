@@ -77,23 +77,26 @@ const renderEdit = (req, res) => {
             res.render('edit.ejs', {
                 book: foundBook,
                 formats: allFormats,
-                token: req.query.token
+                token: req.query.token,
+                userId: req.params.id
             });
         })
     })
 }
 
 const editBook = (req, res) => {
+    console.log(req.query.token)
     Book.update(req.body, {
         where: {id: req.params.index},
         returning: true
     })
     .then(updatedBook => {
-        Format.findByPk(req.body.season)
+        Format.findByPk(req.body.format)
         .then(foundFormat => {
             Book.findByPk(req.params.index)
             .then(foundBook => {
-                res.redirect(`/users/profile/?token=${req.query.token}`)
+                foundBook.addFormat(foundFormat);
+                res.redirect(`/users/profile/${req.params.id}?token=${req.query.token}`)
             })
         })
     })
