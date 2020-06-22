@@ -1,5 +1,15 @@
 img {
     top: 50px;
-    width: 100px;
-    height: 150px;
+    width: 250px;
+    height: 325px;
+}
+
+.books a{
+    font-family: fantasy;
+    color: black;
+    font-size: 20px;
+}
+
+.books {
+    margin-left: -37px;
 }

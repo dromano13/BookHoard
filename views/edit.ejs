@@ -15,16 +15,14 @@
         <form action='/books/<%=book.id%>/<%=userId%>?token=<%=token%>&_method=PUT' method="POST">
             Title: <input type="text" name="title" value="<%=book.title%>" /><br><br>
             Author: <input type="text" name="author" value="<%=book.author%>" /><br><br>
-            Genre: <input type="text" name="genre" value="<%=book.genre%>" /><br><br>
             Img: <input type="text" name="img" value="<%=book.img%>" /><br><br>
             <select name="formatId">
                 <% for ( let i = 0; i<formats.length; i++ ) {
-                    let selected = (i == 0) ? "selected" : "";
+                    let selected = (formats[i] == book.Format) ? "selected" : "";
                 %>
                     <option value="<%=formats[i].id%>" <%=selected%>><%=formats[i].name%></option>
                <% } %>
             </select>
-            <br><br>
             <br><br>
             <input type="submit" value="Edit Book" class="button"/>
         </form>
