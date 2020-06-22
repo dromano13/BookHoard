@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'formatId',
       otherKey: 'bookId'
     });
-    // associations can be defined here
   };
   return Format;
 };
