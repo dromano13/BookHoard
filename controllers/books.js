@@ -85,6 +85,7 @@ const renderEdit = (req, res) => {
 }
 
 const editBook = (req, res) => {
+    console.log(req.query.token)
     Book.update(req.body, {
         where: {id: req.params.index},
         returning: true

@@ -10,7 +10,7 @@
     <body>
         <nav>
             <h1>The Blissful Bibliophiles Book Hoard</h1>
-            <a href="/" class="f90-logout-button">Logout</a>
+            <a href="/" class="logout-button">Logout</a>
         </nav>
         <h2>New Book Page</h2>
         <form action="/books/?token=<%=token%>" method="POST">
@@ -18,7 +18,7 @@
             Author: <input type="text" name="author" />
             Genre: <input type="text" name="genre" />
             Img: <input type="text" name="img" />
-            <input type="submit" value="Create Book" />
+            <input type="submit" value="Create Book" class="button"/>
         </form>
         <footer>
             <div class="contact">

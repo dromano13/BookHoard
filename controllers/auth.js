@@ -78,7 +78,6 @@ const logout = (req, res) => {
     res.redirect('/');
   };
 
-
 module.exports = {
     renderSignup,
     signup,

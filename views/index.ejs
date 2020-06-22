@@ -8,16 +8,16 @@
     <body>
         <nav>
             <h1>The Blissful Bibliophiles Book Hoard</h1>
-            <a href="/" class="f90-logout-button">Logout</a>
+            <a href="/" class="logout-button">Logout</a>
         </nav>
             <h2>Welcome to the Hoard</h2>
-            <a href="/books/new/?token=<%=token%>"> Add a New Book to the Hoard!</a>
+            <a href="/books/new/?token=<%=token%>" class="button"> Add a New Book to the Hoard!</a>
         <ul>
             <% for(let i=0; i<books.length; i++) { %>
                     <a href="/books/<%=books[i].id%>?token=<%=token%>"><img src=<%=books[i].img%> /></a><br><br>
                     <a href="/books/<%=books[i].id%>?token=<%=token%>"> <%=books[i].title%> </a><br><br>
-                <br></br>
             <% } %>
+            <br>
         </ul>
         <footer>
             <div class="contact">
