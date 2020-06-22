@@ -3,3 +3,13 @@ img {
     width: 250px;
     height: 325px;
 }
+
+.books a{
+    font-family: fantasy;
+    color: black;
+    font-size: 20px;
+}
+
+.books {
+    margin-left: -37px;
+}
