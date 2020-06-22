@@ -29,6 +29,9 @@ const renderProfile = (req, res) => {
 }
 
 const editProfile = (req, res) => {
+    if(!req.body.img) {
+        delete req.body.img
+    }
     User.update(req.body, {
         where: {id: req.params.index},
         returning: true

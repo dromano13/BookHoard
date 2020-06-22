@@ -73,10 +73,16 @@ const login = (req, res) => {
     })
 }
 
+const logout = (req, res) => {
+    req.logout();
+    res.redirect('/');
+  };
+
 
 module.exports = {
     renderSignup,
     signup,
     renderLogin,
     login,
+    logout
 }

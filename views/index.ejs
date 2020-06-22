@@ -3,22 +3,39 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/css/index2.css" />
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <nav>
+            <h1>The Blissful Bibliophiles Book Hoard</h1>
             <a href="/" class="f90-logout-button">Logout</a>
         </nav>
-        <h1>Welcome to the Hoard</h1>
-        <nav>
+            <h2>Welcome to the Hoard</h2>
             <a href="/books/new/?token=<%=token%>"> Add a New Book to the Hoard!</a>
-        </nav>
         <ul>
             <% for(let i=0; i<books.length; i++) { %>
-                <li>
-                    <a href="/books/<%=books[i].id%>?token=<%=token%>"> <%=books[i].title%> </a>
-                </li>
+                    <a href="/books/<%=books[i].id%>?token=<%=token%>"><img src=<%=books[i].img%> /></a><br><br>
+                    <a href="/books/<%=books[i].id%>?token=<%=token%>"> <%=books[i].title%> </a><br><br>
                 <br></br>
             <% } %>
         </ul>
+        <footer>
+            <div class="contact">
+                <p>
+                    <a href="#">Contact Us</a>
+                </p>
+            </div>
+            <div class="social">
+                <p>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </p>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2020. All Rights Reserved</p>
+            </div>
+        
+        </footer>
     </body>
 </html>

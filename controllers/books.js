@@ -94,7 +94,7 @@ const editBook = (req, res) => {
             Book.findByPk(req.params.index)
             .then(foundBook => {
                 foundBook.addFormat(foundFormat);
-                res.redirect(`/books/?token=${req.query.token}`)
+                res.redirect(`/users/profile/?token=${req.query.token}`)
             })
         })
     })

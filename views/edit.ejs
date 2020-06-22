@@ -3,13 +3,15 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/css/edit.css" />
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
         <nav>
+            <h1>The Blissful Bibliophiles Book Hoard</h1>
             <a href="/" class="f90-logout-button">Logout</a>
         </nav>
-        <h1>Edit Books Page</h1>
+        <h2>Edit Books Page</h2>
         <form action='/books/<%=book.id%>?token=<%=token%>&_method=PUT' method="POST">
             Title: <input type="text" name="title" value="<%=book.title%>" />
             Author: <input type="text" name="author" value="<%=book.author%>" />
@@ -24,5 +26,23 @@
             </select>
             <input type="submit" value="Edit Books" />
         </form>
+        <footer>
+            <div class="contact">
+                <p>
+                    <a href="#">Contact Us</a>
+                </p>
+            </div>
+            <div class="social">
+                <p>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </p>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2020. All Rights Reserved</p>
+            </div>
+        
+        </footer>
     </body>
 </html>

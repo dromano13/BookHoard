@@ -3,14 +3,16 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/css/show.css" />
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <nav>
+            <h1>The Blissful Bibliophiles Book Hoard</h1>
             <a href="/" class="f90-logout-button">Logout</a>
         </nav>
-        <h1><%=book.title%></h1>
-        <img src=<%=book.img%> />
-        This tome was added to the Hoard by <%=book.User.name%><br>
+        <h2><%=book.title%></h2>
+        <img src=<%=book.img%> /><br><br>
+        This tome was added to the Hoard by <%=book.User.name%><br><br>
         <h3>Please Select Your Reading Format:</h3>
         <select name="formatId">
             <% for ( let i = 0; i<formats.length; i++ ) {
