@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'bookId',
       otherKey: 'formatId'
     });
-
   };
   return Book;
 };

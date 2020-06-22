@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/css/index2.css" />
         <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+        <script src="https://kit.fontawesome.com/733e8c3c47.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav>
@@ -13,13 +13,15 @@
         </nav>
             <h2>Welcome to the Hoard</h2>
             <a href="/books/new/?token=<%=token%>" class="button"> Add a New Book to the Hoard!</a>
-        <ul>
+            <br><br><br>
+       
             <% for(let i=0; i<books.length; i++) { %>
-                    <a href="/books/<%=books[i].id%>?token=<%=token%>"><img src=<%=books[i].img%> /></a><br><br>
+                    <a href="/books/<%=books[i].id%>?token=<%=token%>"><img src=<%=books[i].img%> /></a><br>
                     <a href="/books/<%=books[i].id%>?token=<%=token%>"> <%=books[i].title%> </a><br><br>
             <% } %>
+           
             <br>
-        </ul>
+        
         <footer>
             <div class="contact">
                 <p>
@@ -28,9 +30,9 @@
             </div>
             <div class="social">
                 <p>
-                    <a href="#">Twitter</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
+                    <a href="#" class='fab fa-facebook'>Facebook</a>
+                    <a href="#" class='fab fa-twitter'>Twitter</a>
+                    <a href="#" class='ifab fa-instagram-square'>Instagram</a>
                 </p>
             </div>
             <div class="copyright">
@@ -38,6 +40,5 @@
             </div>
         
         </footer>
-
     </body>
 </html>
