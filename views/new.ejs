@@ -14,10 +14,12 @@
         </nav>
         <h2>New Book Page</h2>
         <form action="/books/?token=<%=token%>" method="POST">
+
             Title: <input type="text" name="title" />
             Author: <input type="text" name="author" />
             Genre: <input type="text" name="genre" />
             Img: <input type="text" name="img" />
+
             <input type="submit" value="Create Book" />
         </form>
         <footer>

@@ -93,7 +93,6 @@ const editBook = (req, res) => {
         .then(foundFormat => {
             Book.findByPk(req.params.index)
             .then(foundBook => {
-                foundBook.addFormat(foundFormat);
                 res.redirect(`/users/profile/?token=${req.query.token}`)
             })
         })
@@ -109,3 +108,4 @@ module.exports = {
     renderEdit,
     editBook
 }
+

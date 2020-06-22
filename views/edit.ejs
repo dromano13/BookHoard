@@ -13,6 +13,7 @@
         </nav>
         <h2>Edit Books Page</h2>
         <form action='/books/<%=book.id%>?token=<%=token%>&_method=PUT' method="POST">
+
             Title: <input type="text" name="title" value="<%=book.title%>" />
             Author: <input type="text" name="author" value="<%=book.author%>" />
             Genre: <input type="text" name="genre" value="<%=book.genre%>" />
